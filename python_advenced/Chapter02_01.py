@@ -69,3 +69,42 @@ print()
 print()
 
 
+# 실 사용 실습
+# 학생 전체 그룹 생성
+# 반 20명, 4개의 반 -> (A, B, C, D) 번호
+
+# 네임드 튜플 선언
+Classes = namedtuple('Classes', ['rank', 'number'])
+
+# 그룹 리스트 선언
+numbers = [str(n) for n in range(1, 21)]
+# print(numbers)
+
+# list comprehension
+
+# numbers2 = []
+
+# for n in range(1,21):
+#     numbers2.append(str(n))
+
+ranks = 'A B C D'.split()
+# print(rank, numbers)
+
+# List comprehension
+students = [Classes(rank, number) for rank in ranks for number in numbers]
+
+print('EX5-1 -',len(students))
+print('EX5-2 -',students)
+
+# 가독성 X
+
+students2 = [Classes(rank, number) for rank in 'A B C D'.split() for number in [str(n) for n in range(1, 21)]]
+print('EX6-1 -',len(students2))
+print('EX6-2 -',students2)
+
+
+# 출력
+for s in students:
+    print('EX7-1 - ', s)
+
+
